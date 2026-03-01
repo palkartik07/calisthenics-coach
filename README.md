@@ -83,7 +83,7 @@ STREAM_API_SECRET=your_stream_api_secret_here
 ### 5. Run it
 
 ```bash
-python backend_simple.py run
+python calisthenics_coach.py run
 ```
 
 A browser window opens with a video call interface. Grant camera permission. The coach introduces itself. Start doing push-ups and it'll count your reps and give you feedback.
@@ -92,7 +92,7 @@ A browser window opens with a video call interface. Grant camera permission. The
 
 ```
 calisthenics-coach/
-├── backend_simple.py           # Main entry point
+├── calisthenics_coach.py           # Main entry point
 ├── instructions/
 │   ├── pushups.md             # Push-up coaching guide
 │   ├── squats.md              # Squat coaching guide
@@ -119,7 +119,7 @@ The AI reads these instructions and watches for violations.
 
 ## Changing exercises
 
-Open `backend_simple.py` and change this line:
+Open `calisthenics_coach.py` and change this line:
 
 ```python
 SELECTED_EXERCISE = "pushups"  # Change to: squats, pullups, planks, dips, burpees
@@ -127,7 +127,7 @@ SELECTED_EXERCISE = "pushups"  # Change to: squats, pullups, planks, dips, burpe
 
 ## Performance notes
 
-YOLO runs on CPU by default. This works fine but processes ~10-15 FPS. If you have an NVIDIA GPU, change this in `backend_simple.py`:
+YOLO runs on CPU by default. This works fine but processes ~10-15 FPS. If you have an NVIDIA GPU, change this in `calisthenics_coach.py`:
 
 ```python
 device="cpu"  # Change to "cuda"
@@ -171,15 +171,6 @@ A perfect rep (score 10) means you nailed all the form criteria. A score of 5-6 
 - Works best if you're the only person in frame
 - CPU processing means ~10 FPS (fine for coaching, not high-speed analysis)
 
-## Built for Vision Agents hackathon
-
-This project was built for the Vision Possible: Agent Protocol hackathon (Feb 23 - Mar 1, 2026). The challenge was to build something using Vision Agents SDK that combines computer vision with AI agents.
-
-We picked calisthenics coaching because:
-1. Form really matters for bodyweight exercises
-2. It's hard to see your own form mistakes
-3. Real-time feedback is crucial
-4. Perfect use case for pose detection + AI feedback
 
 ## License
 
