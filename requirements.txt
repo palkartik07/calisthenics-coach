@@ -1,0 +1,14 @@
+# Calisthenics Coach Dependencies
+
+# Core framework
+vision-agents[getstream,gemini,ultralytics]>=0.1.0
+
+# Environment management
+python-dotenv>=1.0.0
+
+# Note: vision-agents will automatically install:
+# - ultralytics (YOLO)
+# - google-generativeai (Gemini)
+# - stream-video-python (Stream Video)
+# - aiortc (WebRTC)
+# - av (video processing)
